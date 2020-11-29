@@ -130,7 +130,7 @@ module MyFirstBigInt =
     // BigNatをstringに変換する関数
     let bshow (n:BigNat) =
         let sa : string array = Array.zeroCreate n.used
-        // 最上位以外は0パディング(baseNが10の倍数であることが前提)
+        // 最上位以外は0パディング(baseNが10のべき乗であることが前提)
         for i in 0 .. (n.used - 2) do
             do sa.[i] <- (n.digits.[i] + baseN).ToString().Substring(1)
         // 最上位は0パディングなし
